@@ -7,16 +7,29 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';  
+import { HttpClientModule } from "@angular/common/http";
+import { ListarDirectorioService } from 'src/app/services/listar-directorio.service';
+import { AuthGuardService } from './services/authLogin.service';
+import { LoginService } from './services/login.service';
+
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    
+  ],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    ListarDirectorioService,
+    AuthGuardService,
+    LoginService,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+   
   ],
   bootstrap: [AppComponent]
 })
