@@ -45,8 +45,11 @@ export class MenuComponent implements OnInit {
   menuToggle(){
     this.menu.toggle();
   }
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("ngOnInit");
+  }
   navegacion(url){
+    
     this.router.navigate([url]);
   }
 
