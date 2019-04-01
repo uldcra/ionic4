@@ -16,6 +16,7 @@ import { AppRoutingHomeModule } from './app-routing-home.module';
 
 
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -50,6 +51,7 @@ import { AppRoutingHomeModule } from './app-routing-home.module';
   providers:[
     AuthGuardService,
     LoginService,
+   
   ],
   exports:[
     ListadosPage,

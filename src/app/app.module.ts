@@ -12,13 +12,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { ListarDirectorioService } from 'src/app/services/listar-directorio.service';
 import { AuthGuardService } from './services/authLogin.service';
 import { LoginService } from './services/login.service';
+import { ListService } from './services/list-service';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+   
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
@@ -29,6 +31,7 @@ import { LoginService } from './services/login.service';
     AuthGuardService,
     LoginService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ListService
    
   ],
   bootstrap: [AppComponent]

@@ -21,7 +21,10 @@ const routes: Routes = [
   loadChildren: './pages/lista/lista.module#ListaPageModule' ,
   canActivate:[AuthGuardService]
   }, 
+  { path: 'secciones/:id', loadChildren: './pages/secciones/secciones.module#SeccionesPageModule' },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {path: '**', redirectTo: 'dashboard'}
+  
  
   
 

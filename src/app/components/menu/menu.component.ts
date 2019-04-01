@@ -1,7 +1,8 @@
-import { Component, OnInit, DoCheck} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { ListService } from 'src/app/services/list-service';
 
 @Component({
   selector: 'app-menu',
@@ -9,8 +10,11 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./menu.component.scss'],
   
 })
-export class MenuComponent implements OnInit {
-
+export class MenuComponent implements OnInit{
+ 
+ 
+  
+  public title:string="";
 
   public appPages=[
     {url:"dashboard",icon:"home",title:"Home"},
@@ -21,13 +25,15 @@ export class MenuComponent implements OnInit {
   public logueado:boolean=false;
   public session:boolean=false;
 
-  constructor(private menu: MenuController,private router:Router,private loginService:LoginService) {
+  constructor(private menu: MenuController,private router:Router,private loginService:LoginService,private listService:ListService) {
    
     
    
  
    }
-
+   ngOnInit() {
+   this.title=this.listService.title;
+  }
  
   openFirst() {
     this.menu.enable(true, 'first');
@@ -45,9 +51,7 @@ export class MenuComponent implements OnInit {
   menuToggle(){
     this.menu.toggle();
   }
-  ngOnInit() {
-    console.log("ngOnInit");
-  }
+  
   navegacion(url){
     
     this.router.navigate([url]);

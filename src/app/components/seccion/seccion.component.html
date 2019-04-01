@@ -1,0 +1,12 @@
+<ion-content padding>
+    <p>
+        Sección {{seccion}}
+    </p>
+      <ion-list>
+        <ion-item *ngFor="let item of listaPdf">
+          <img slot="start" src="/assets/icon/pdf.svg" width="23px">
+          <ion-label><a [href]="url+item">{{item}}</a></ion-label>
+          
+        </ion-item>
+      </ion-list>
+</ion-content>
