@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
     {url:"dashboard",icon:"home",title:"Home"},
     {url:"dashboard/list",icon:"list",title:"List"},
     {url:"dashboard/listados",icon:"list",title:"Listados"},
-    {url:"lista",icon:"list",title:"Lista"}
+    /* {url:"lista",icon:"list",title:"Lista"} */
   ];
   public logueado:boolean=false;
   public session:boolean=false;
